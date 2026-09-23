@@ -5,6 +5,12 @@ Group B, University of Leeds. Built to accompany the final consultancy report.
 **All data here is synthetic.** The cases and the two sets of responses were written
 by us for demonstration. No AutoMind customer data was used.
 
+## Watch it
+
+A short walkthrough of the dashboard — what it shows, why the release is blocked
+despite Version B's higher average score, and what it actually takes to clear
+both regressions: **https://youtu.be/oOA3wFAElpM**
+
 ## What it does
 
 It runs a held-out library of known diagnostic cases against two versions of a
@@ -64,3 +70,10 @@ A team watching the average would have shipped it.
 
 That is the whole argument. Aggregate accuracy is the wrong number to watch. The
 question is never whether a change is better on average, but what it broke.
+
+Try it yourself in the dashboard: fixing a case's gates alone isn't enough to
+clear it — the badge can flip to PASS while the case's total score is still
+below what the approved version scored, and it will still count as a
+regression. Only once a case's score is brought back up to at least parity does
+it stop blocking release. Fix both C-005 and C-006 that way and the banner
+flips to "Release approved."
