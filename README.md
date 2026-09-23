@@ -9,7 +9,7 @@ by us for demonstration. No AutoMind customer data was used.
 
 A short walkthrough of the dashboard — what it shows, why the release is blocked
 despite Version B's higher average score, and what it actually takes to clear
-both regressions: **https://youtu.be/oOA3wFAElpM**
+both regressions: **https://youtu.be/-IKyIetqinE**
 
 ## What it does
 
