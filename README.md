@@ -23,13 +23,25 @@ external scripts, fonts, or network calls, so it works offline too.
 
 ## Using the dashboard
 
-`results.html` is interactive:
+`results.html` is interactive, and the scoring is genuinely live — not just
+click-to-reveal. Everything in it recomputes in the browser using the same
+rules `evaluate.py` applies:
 
 - **Filter** by verdict (All / Pass / Review / Fail) using the pills above the case list.
 - **Click any case** to expand it — the full evidence (vehicle, fault codes or sensor
   trend, owner answers), what the case requires, Version B's actual response, why it
   scored the way it did, and a side-by-side score for every rubric measure.
+- **Try a different score or gate.** Every measure and gate for Version B is
+  clickable. Click a gate chip to flip it, or a measure meter to cycle its score
+  (0 → 1 → 2), and watch the case's verdict, the reasons, the release banner and
+  the four summary tiles all update immediately — this is the actual decision
+  rule running, not a canned animation. "Reset this case" / "Reset all" puts it
+  back to the real recorded run.
 - **Expand all / Collapse all** if you want to read every case at once.
+
+Nothing you change in the browser is saved anywhere — it's a sandbox for asking
+"what if this had scored differently," not an edit to the underlying data.
+Refreshing the page always returns to the actual result.
 
 ## Files
 
