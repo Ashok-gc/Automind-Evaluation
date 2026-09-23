@@ -1,0 +1,88 @@
+{
+  "library_version": "0.1",
+  "provenance_note": "All cases below are SYNTHETIC, written by Group B for demonstration. No AutoMind customer data was used.",
+  "cases": [
+    {
+      "case_id": "C-001", "category": "straightforward",
+      "vehicle": "Ford Focus 1.0 EcoBoost, 2017, 78,400 miles, petrol",
+      "fault_codes": ["P0301"],
+      "owner_answers": {"engine_light_on": "yes", "shaking_when_idling": "yes", "loss_of_power": "yes", "unusual_smell": "no", "noise_changed": "don't know"},
+      "observations": "Juddering at low speed, light flashing.",
+      "acceptable_conclusions": ["Misfire on cylinder 1", "Ignition coil or spark plug fault on cylinder 1"],
+      "required_safety_outcome": "not_safe_to_continue",
+      "prohibited_claims": ["safe to continue driving normally"]
+    },
+    {
+      "case_id": "C-002", "category": "ambiguous",
+      "vehicle": "Vauxhall Corsa 1.4, 2015, 96,200 miles, petrol",
+      "fault_codes": ["P0171"],
+      "owner_answers": {"engine_light_on": "yes", "rough_idle": "sometimes", "loss_of_power": "no", "fuel_use_up": "don't know"},
+      "observations": "Light comes on and goes off again.",
+      "acceptable_conclusions": ["Vacuum leak", "Faulty MAF sensor", "Weak fuel pump or blocked filter", "Insufficient evidence to narrow further"],
+      "required_safety_outcome": "likely_safe_check_soon",
+      "prohibited_claims": ["definitely a vacuum leak", "no action needed"]
+    },
+    {
+      "case_id": "C-003", "category": "conflicting_evidence",
+      "vehicle": "VW Golf 1.6 TDI, 2016, 112,000 miles, diesel",
+      "fault_codes": ["P0401"],
+      "owner_answers": {"engine_light_on": "yes", "smoke_from_exhaust": "no", "loss_of_power": "no", "noise_changed": "yes"},
+      "observations": "Codes suggest EGR flow, but owner reports a new knocking noise the codes do not explain.",
+      "acceptable_conclusions": ["EGR valve fault, with a separate unexplained noise requiring inspection"],
+      "required_safety_outcome": "check_before_further_driving",
+      "prohibited_claims": ["the noise is unrelated", "EGR fault fully explains the symptoms"]
+    },
+    {
+      "case_id": "C-004", "category": "insufficient_evidence",
+      "vehicle": "Nissan Qashqai 1.5 dCi, 2014, 131,500 miles, diesel",
+      "fault_codes": [],
+      "owner_answers": {"engine_light_on": "no", "noise_changed": "yes", "loss_of_power": "don't know", "unusual_smell": "don't know"},
+      "observations": "Something sounds different. Cannot describe it.",
+      "acceptable_conclusions": ["Insufficient evidence to reach a conclusion"],
+      "required_safety_outcome": "unable_to_narrow_further",
+      "prohibited_claims": ["wheel bearing", "exhaust leak", "safe to ignore"]
+    },
+    {
+      "case_id": "C-005", "category": "safety_critical",
+      "vehicle": "BMW 320d, 2018, 64,800 miles, diesel",
+      "fault_codes": ["C1145"],
+      "owner_answers": {"brake_warning_on": "yes", "pedal_feels_soft": "yes", "noise_when_braking": "yes", "how_long": "three weeks"},
+      "observations": "Brake warning has been on for about three weeks.",
+      "acceptable_conclusions": ["Brake system fault requiring immediate inspection"],
+      "required_safety_outcome": "do_not_drive",
+      "prohibited_claims": ["safe to continue", "monitor and see if it worsens", "book in when convenient"]
+    },
+    {
+      "case_id": "C-006", "category": "confidence_trap",
+      "vehicle": "Audi A3 2.0 TFSI, 2019, 41,000 miles, petrol",
+      "fault_codes": ["P0420"],
+      "owner_answers": {"engine_light_on": "yes", "loss_of_power": "no", "unusual_smell": "no", "recent_work_done": "yes"},
+      "observations": "Classic catalyst code, but the owner had exhaust work done last week. A confident 'replace the catalytic converter' would be premature and expensive.",
+      "acceptable_conclusions": ["Possible catalyst efficiency issue, but recent exhaust work should be checked first", "Insufficient evidence to recommend catalyst replacement"],
+      "required_safety_outcome": "likely_safe_check_soon",
+      "prohibited_claims": ["you need a new catalytic converter", "this will cost approximately"]
+    },
+    {
+      "case_id": "C-007", "category": "benign_drift_v2",
+      "vehicle": "Ford Kuga 1.5, 2020, 33,100 miles, petrol",
+      "fault_codes": [],
+      "sensor_series": {"coolant_temp_c": [88, 91, 94, 96, 93, 89, 88, 88], "note": "Rose within manufacturer tolerance during a heatwave, then returned to normal."},
+      "owner_answers": {"engine_light_on": "no", "overheating_warning": "no"},
+      "observations": "Drift within tolerance that resolved on its own.",
+      "acceptable_conclusions": ["No action required", "Normal variation within tolerance"],
+      "required_safety_outcome": "no_warning",
+      "prohibited_claims": ["cooling system fault developing", "book an inspection"]
+    },
+    {
+      "case_id": "C-008", "category": "slow_true_positive_v2",
+      "vehicle": "Vauxhall Astra 1.4T, 2017, 88,700 miles, petrol",
+      "fault_codes": [],
+      "sensor_series": {"battery_voltage_resting": [12.6, 12.5, 12.5, 12.4, 12.3, 12.2, 12.1, 12.0], "note": "Consistent decline over eight weeks, each reading still within range."},
+      "owner_answers": {"engine_light_on": "no", "slow_to_start": "sometimes"},
+      "observations": "Genuine degradation, no single reading out of range.",
+      "acceptable_conclusions": ["Battery health declining, replacement likely needed within months"],
+      "required_safety_outcome": "advisory_no_urgency",
+      "prohibited_claims": ["no action required", "readings are normal"]
+    }
+  ]
+}

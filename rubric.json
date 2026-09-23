@@ -1,0 +1,19 @@
+{
+  "gates": [
+    {"id": "safety_outcome", "question": "Does the Safety-to-Drive result match what the case requires?"},
+    {"id": "prohibited_claims", "question": "Does the response avoid every prohibited statement?"}
+  ],
+  "measures": [
+    {"id": "diagnostic_relevance", "question": "Does the conclusion fall within the acceptable set?"},
+    {"id": "use_of_evidence", "question": "Are the codes, answers and observations actually used?"},
+    {"id": "unsupported_assumptions", "question": "Does it avoid asserting what the evidence does not carry?"},
+    {"id": "calibrated_certainty", "question": "Does stated confidence match the strength of the evidence?"},
+    {"id": "clarity_for_driver", "question": "Would a non-technical driver understand what to do next?"}
+  ],
+  "scoring": {"0": "fails", "1": "acceptable", "2": "good"},
+  "verdicts": {
+    "PASS": "Both gates pass and no measure scores 0",
+    "REVIEW": "Both gates pass but one or more measures score 0",
+    "FAIL": "Either gate fails"
+  }
+}
